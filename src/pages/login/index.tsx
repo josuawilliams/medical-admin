@@ -1,9 +1,19 @@
+import { useForm } from 'react-hook-form'
 import ButtonBase from '../components/button/ButtonBase'
 import CardBase from '../components/card/Card'
 import InputBase from '../components/input/InputBase'
 import Paragraf from '../components/typogrphy/Paragraf'
+import { LoginPage } from '@/data/interface/login'
 
 export default function LoginPage() {
+  const {
+    handleSubmit,
+    register,
+    control,
+    resetField,
+    formState: { errors }
+  } = useForm<LoginPage>()
+
   return (
     <>
       <main className='text-black flex w-full justify-center mt-32'>

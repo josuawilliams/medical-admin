@@ -8,7 +8,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 // import NextNprogress from 'nextjs-progressbar';
 // import 'nprogress/nprogress.css'
 // import 'react-toastify/dist/ReactToastify.css'
-// import Loader from '@/components/atom/loader/Loader';
 import { Router } from 'next/router'
 import { Backdrop } from '@mui/material'
 import { ThemeProvider } from '@material-tailwind/react'
@@ -44,20 +43,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <>
-      {/* <NextNprogress
-				color="#FF7A00"
-				startPosition={0.3}
-				stopDelayMs={200}
-				height={3}
-			/> */}
       <Backdrop
         sx={{
           color: '#fff',
           zIndex: (theme) => theme.zIndex.drawer + 1
         }}
-        open={loading}>
-        {/* <Loader /> */}
-      </Backdrop>
+        open={loading}></Backdrop>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider value={customTheme}>
           <main className={openSans.className}>

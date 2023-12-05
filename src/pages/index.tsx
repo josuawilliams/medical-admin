@@ -3,11 +3,16 @@ import { useEffect } from 'react'
 
 export default function Home() {
   const router = useRouter()
-  const getAdmin = () => {
-    router.replace('/login')
+  const checkAdmin = async () => {
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
+    // router.replace('/login')
   }
   useEffect(() => {
-    getAdmin()
+    checkAdmin()
   })
 
   return <></>
