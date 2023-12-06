@@ -1,4 +1,4 @@
-export type LoginPage = {
+export type LoginPages = {
   email: string
   password: string
 }
