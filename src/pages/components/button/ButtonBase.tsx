@@ -41,7 +41,11 @@ const ButtonBase: React.ForwardRefExoticComponent<PropsButton> = forwardRef(
         size={size}
         color={'light-blue'}
         className={`relative font-sans capitalize
-                ${isLoading ? 'flex items-center justify-center gap-2' : ''} 
+                ${
+                  isLoading
+                    ? 'flex items-center justify-center gap-2 !mt-10'
+                    : ''
+                } 
                 ${rounded ? 'rounded-full' : ''} ${className}`}
         variant={variant}
         disabled={isDisabled || isLoading}

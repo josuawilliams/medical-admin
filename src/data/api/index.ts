@@ -38,9 +38,7 @@ export default function API<T>(
         resolve(json_res)
       })
       .catch((error: any) => {
-        console.log(error, 'ERRR')
         const json_res: APIResponse<T> = error?.response?.data
-
         if (
           (error.response &&
             error.response?.status === 500 &&
@@ -50,7 +48,7 @@ export default function API<T>(
         ) {
           Cookies.remove('token', undefined)
           Cookies.remove('divisi', undefined)
-          window.location.replace('/login')
+          // window.location.replace('/login')
           reject(json_res)
         } else if (error.response) {
           reject(json_res)

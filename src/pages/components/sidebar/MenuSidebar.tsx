@@ -1,7 +1,6 @@
 import Loader from '../loader/loader'
 
 export default function MenuSidebar() {
-  const isLoading = true
   
   return (
     <>

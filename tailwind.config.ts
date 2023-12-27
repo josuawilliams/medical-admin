@@ -24,9 +24,9 @@ module.exports = withMT({
       },
       colors: {
         primary: '#4F46E5',
-        green05: '#F4FDEC',
-        green60: '#1B7929',
-        red05: '#FFF3EB',
+        white: '#f9fafb',
+        gray60: '#8b96b6',
+        grayTitle: '#5a5c69',
         red60: '#93182C',
         'gray-01': '#B0BEC5',
         'primary-surface': '#FFFAF4',

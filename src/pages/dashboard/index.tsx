@@ -9,6 +9,5 @@ export default function DashboardPage() {
 }
 
 DashboardPage.getLayout = function GetLayout(page: React.ReactNode) {
-  return <AuthenticatedLayout>{page}</AuthenticatedLayout>
+  return <AuthenticatedLayout title={'Dashboard'}>{page}</AuthenticatedLayout>
 }
-
