@@ -4,14 +4,21 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { ArrowLeftCircleIcon } from '@heroicons/react/24/solid'
 import { AdminDataDetail } from '@/data/interface/admin'
 import { extractInitials } from '@/utils/convert'
-
+import Cookies from 'js-cookie'
+import { useRouter } from 'next/router'
 interface PropsNavbar {
   titleNav?: string
   data?: AdminDataDetail
 }
 
 export default function Navbar({ titleNav, data }: PropsNavbar) {
-  const logOut = () => {}
+  const router = useRouter()
+
+  const logOut = () => {
+    Cookies.remove('token', undefined)
+    Cookies.remove('divisi', undefined)
+    router.push('/login')
+  }
 
   return (
     <>
@@ -53,7 +60,7 @@ export default function Navbar({ titleNav, data }: PropsNavbar) {
                   <Menu.Item>
                     {({ active }) => (
                       <button
-                        // onClick={logOut()}
+                        onClick={logOut}
                         className={`${
                           active ? 'bg-blue-300 text-gray-900' : 'text-gray-900'
                         } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>

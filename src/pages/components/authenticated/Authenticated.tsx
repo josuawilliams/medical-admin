@@ -41,18 +41,24 @@ export default function AuthenticatedLayout({ children, title }: propsLayput) {
 
   return (
     <>
-      {loading ? (
+      {/* {loading && data ? (
         <Loader />
-      ) : (
-        <Suspense fallback={<Loader />}>
-          <main className='relative flex'>
-            <Sidebar />
-            <Wrapper data={data} titleNav={title}>
-              {children}
-            </Wrapper>
-          </main>
-        </Suspense>
-      )}
+      ) : ( */}
+      {/* <Suspense fallback={<Loader />}> */}
+      <main className='relative flex'>
+        <Sidebar />
+        {loading && data ? (
+          <div className='absolute flex h-[100vh] ml-[58vw] justify-center'>
+            <Loader />
+          </div>
+        ) : (
+          <Wrapper data={data} titleNav={title}>
+            {children}
+          </Wrapper>
+        )}
+      </main>
+      {/* </Suspense> */}
+      {/* )} */}
     </>
   )
 }

@@ -13,6 +13,7 @@ module.exports = withMT({
     fontFamily: {
       sans: ['__Open_Sans_f3cbcc', 'sans-serif']
     },
+    
     extend: {
       boxShadow: {
         card: '0px 2px 4px 0px rgba(0, 0, 0, 0.16), 0px 0px 2px 0px rgba(0, 0, 0, 0.08)'

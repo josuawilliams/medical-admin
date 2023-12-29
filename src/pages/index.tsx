@@ -2,6 +2,7 @@ import { fetchAdminMe } from '@/data/api/admin'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import Loader from './components/loader/loader'
+import AuthenticatedLayout from './components/authenticated/Authenticated'
 
 export default function Home() {
   const router = useRouter()

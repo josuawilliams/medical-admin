@@ -18,7 +18,13 @@ const openSans = Open_Sans({
   variable: '--font-open'
 })
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false // default: true
+    }
+  }
+})
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
